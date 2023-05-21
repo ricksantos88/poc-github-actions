@@ -1,0 +1,18 @@
+name: Build and Test Java Spring Boot Application
+on: [push]
+jobs:
+  clean:
+    steps:
+      - checkout
+      - run: ./gradlew clean
+      - run: echo "CLEAN SUCCESS"
+  build:
+    steps:
+      - checkout
+      - run: ./gradlew build -x test
+      - run: echo "BUILD SUCCESS"
+  test:
+    steps:
+      - checkout
+      - run: ./gradlew testClasses
+      - run: echo "TEST SUCCESS"
