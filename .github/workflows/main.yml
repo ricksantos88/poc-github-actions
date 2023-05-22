@@ -1,6 +1,7 @@
 name: Build and Test Java Spring Boot Application
 on: [push]
 jobs:
+  runs-on: ubuntu-latest
   clean:
     steps:
       - checkout
