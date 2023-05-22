@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-  Java setup action:
+  Java-setup-action:
     - name: Check out repository code
       uses: actions/checkout@v3
     - name: Set upo JDK 11
@@ -49,14 +49,14 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-  Build action:
+  Build-action:
     runs-on: ubuntu-latest
     steps:
       - name: Build with Gradle
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
           arguments: build -x test
-  Run tests action:
+  Run-tests-action:
     runs-on: ubuntu-latest
     steps:
       - name: Run Gradle tests
